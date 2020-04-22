@@ -50,21 +50,22 @@ const RightContainer = (props) => {
 				const {speed, deg} = wind || {};
 				const {temp, temp_min, temp_max, pressure, humidity,} = main || {};
 				const description = _.get(item, 'weather[0].description', '');
-				const icon=_.get(item,'weather[0].icon','')
+				const icon = _.get(item, 'weather[0].icon', '')
 				return <Card className={ classes.root } key={ String(index) }>
 					<CardContent>
+						<h3>{ name }</h3>
 						<div className='header-bar-container row '>
-							<HeaderItem title={ 'Wind' } subtitle={ meterSecToMileHour(wind.speed ) }/>
-							<HeaderItem title={ 'Humidity' } subtitle={ `${main.humidity}%` }/>
-							<HeaderItem title={ 'Pressure' } subtitle={ `${main.pressure}hpa` }/>
+							<HeaderItem title={ 'Wind' } subtitle={ meterSecToMileHour(wind.speed) }/>
+							<HeaderItem title={ 'Humidity' } subtitle={ `${ main.humidity }%` }/>
+							<HeaderItem title={ 'Pressure' } subtitle={ `${ main.pressure }hpa` }/>
 							<HeaderItem title={ 'Sunrise' } subtitle={ moment().format('hh:mm a') }/>
 						</div>
 						<div className='d-flex justify-content-center'>
-							{/*<HeaderItem title={ 'Sunset' } subtitle={ moment().format('hh:mm a') }/>*/}
+							{/*<HeaderItem title={ 'Sunset' } subtitle={ moment().format('hh:mm a') }/>*/ }
 						</div>
 						<div className=' mt-4 row'>
 							<div className='col-12 col-md-5 d-flex justify-content-center justify-content-md-end'>
-								<img src={ `http://openweathermap.org/img/wn/${icon}@2x.png` } style={ {width: 70, height: 70} }/>
+								<img src={ `http://openweathermap.org/img/wn/${ icon }@2x.png` } style={ {width: 70, height: 70} }/>
 							</div>
 							<div className='col-12 col-md-7 d-flex flex-column align-items-center align-items-md-start'>
 								<h1>{ kelvinToCelc(main.temp) } { description }</h1>
