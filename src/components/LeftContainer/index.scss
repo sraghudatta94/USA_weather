@@ -1,0 +1,23 @@
+.left-container {
+  height: 100%;
+  border-radius: 0 !important;
+  overflow-y: hidden;
+  border-bottom-width: 0px !important;
+
+  &-inner-list {
+    overflow-y: scroll;
+    margin-right: -10px;
+    height: calc(100vh - 64px - 160px);
+  }
+
+  &-inner-button-container {
+    padding-left: 20px;
+    padding-right: 30px;
+    margin-top: 20px;
+  }
+}
+
+.toast-error {
+  color: white !important;
+  background-color: #F50057 !important;
+}
